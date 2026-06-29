@@ -1,0 +1,44 @@
+{
+    "env": {
+        "ANTHROPIC_AUTH_TOKEN": "YOUR_API_KEY",
+        "ANTHROPIC_BASE_URL": "https://dashscope.aliyuncs.com/apps/anthropic",
+        "ANTHROPIC_MODEL": "qwen3.7-max",
+        "ANTHROPIC_DEFAULT_HAIKU_MODEL": "qwen3.6-flash",
+        "ANTHROPIC_DEFAULT_SONNET_MODEL": "qwen3.7-max",
+        "ANTHROPIC_DEFAULT_OPUS_MODEL": "qwen3.7-max",
+        "CLAUDE_CODE_SUBAGENT_MODEL": "qwen3.7-max"
+    },
+    "extraKnownMarketplaces": {
+        "ecc": {
+            "source": {
+                "source": "github",
+                "repo": "affaan-m/ECC"
+            }
+        },
+        "claude-plugins-official": {
+            "source": {
+                "source": "github",
+                "repo": "anthropics/claude-plugins-official"
+            }
+        }
+    },
+    "enabledPlugins": {
+        "ecc@ecc": true,
+        "code-review@claude-plugins-official": true,
+        "feature-dev@claude-plugins-official": true,
+        "security-guidance@claude-plugins-official": true,
+        "commit-commands@claude-plugins-official": true,
+        "test-writing@claude-plugins-official": true,
+        "debugging@claude-plugins-official": true,
+        "rust-ls@claude-plugins-official": true,
+        "go-ls@claude-plugins-official": true,
+        "python-ls@claude-plugins-official": true,
+        "clangd-ls@claude-plugins-official": true
+    },
+    "mcpServers": {
+        "playwright": {
+            "command": "npx",
+            "args": ["-y", "@playwright/mcp@latest"]
+        }
+    }
+}

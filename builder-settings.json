@@ -1,0 +1,34 @@
+{
+    "env": {
+        "ANTHROPIC_AUTH_TOKEN": "REPLACE_ME",
+        "ANTHROPIC_BASE_URL": "https://dashscope.aliyuncs.com/apps/anthropic",
+        "ANTHROPIC_MODEL": "qwen3.7-max"
+    },
+    "extraKnownMarketplaces": {
+        "ecc": {
+            "source": {
+                "source": "github",
+                "repo": "affaan-m/ECC"
+            }
+        },
+        "claude-plugins-official": {
+            "source": {
+                "source": "github",
+                "repo": "anthropics/claude-plugins-official"
+            }
+        }
+    },
+    "enabledPlugins": {
+        "ecc@ecc": true,
+        "code-review@claude-plugins-official": true,
+        "feature-dev@claude-plugins-official": true,
+        "security-guidance@claude-plugins-official": true,
+        "commit-commands@claude-plugins-official": true,
+        "test-writing@claude-plugins-official": true,
+        "debugging@claude-plugins-official": true,
+        "rust-ls@claude-plugins-official": true,
+        "go-ls@claude-plugins-official": true,
+        "python-ls@claude-plugins-official": true,
+        "clangd-ls@claude-plugins-official": true
+    }
+}

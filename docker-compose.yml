@@ -1,0 +1,19 @@
+services:
+  claude-code:
+    build:
+      context: .
+      secrets:
+        - anthropic_token
+    image: claude-code:latest
+    stdin_open: true
+    tty: true
+    volumes:
+      - ${CLAUDE_WORKSPACE:-.}:/workspace
+      - ${HOME}/.claude/projects/Container:/root/.claude/projects/Container
+    environment:
+      - ANTHROPIC_AUTH_TOKEN=${ANTHROPIC_AUTH_TOKEN:-}
+      - WORKSPACE_HOST_PATH=${CLAUDE_WORKSPACE:-}
+
+secrets:
+  anthropic_token:
+    environment: ANTHROPIC_AUTH_TOKEN
