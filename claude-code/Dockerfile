@@ -1,5 +1,5 @@
 # ---- Stage 1: Builder — install all plugins with real API tokens ----
-FROM node:26-bookworm-slim AS builder
+FROM docker.io/library/node:26-bookworm-slim AS builder
 
 # Use Aliyun mirror for apt
 RUN sed -i 's|deb.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list.d/debian.sources 2>/dev/null; \
