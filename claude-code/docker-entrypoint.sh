@@ -34,4 +34,15 @@ WORKSPACE_PROJECT="$PROJECTS_DIR/-workspace"
 mkdir -p "$NAMESPACED_DIR"
 [ ! -e "$WORKSPACE_PROJECT" ] && ln -s "$NAMESPACED_DIR/-workspace" "$WORKSPACE_PROJECT"
 
+# Build/update CodeGraph knowledge graph if workspace is a git repo
+if [ -d /workspace/.git ] && [ "${SKIP_CODEGRAPH:-}" != "true" ]; then
+    if [ -d /workspace/.codegraph ]; then
+        echo "==> CodeGraph: syncing knowledge graph..."
+        codegraph sync /workspace 2>/dev/null || true
+    else
+        echo "==> CodeGraph: initializing knowledge graph..."
+        codegraph init /workspace 2>/dev/null || true
+    fi
+fi
+
 exec claude "$@"

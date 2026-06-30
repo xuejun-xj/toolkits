@@ -1,4 +1,5 @@
 {
+    "theme": "custom:my-theme",
     "env": {
         "ANTHROPIC_AUTH_TOKEN": "YOUR_API_KEY",
         "ANTHROPIC_BASE_URL": "https://dashscope.aliyuncs.com/apps/anthropic",
@@ -33,12 +34,17 @@
         "rust-ls@claude-plugins-official": true,
         "go-ls@claude-plugins-official": true,
         "python-ls@claude-plugins-official": true,
-        "clangd-ls@claude-plugins-official": true
+        "clangd-ls@claude-plugins-official": true,
+        "claude-mem@claude-plugins-official": true
     },
     "mcpServers": {
         "playwright": {
             "command": "npx",
             "args": ["-y", "@playwright/mcp@latest"]
+        },
+        "codegraph": {
+            "command": "npx",
+            "args": ["-y", "@colbymchenry/codegraph@latest", "mcp"]
         }
     }
 }

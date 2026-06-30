@@ -29,6 +29,7 @@
         "rust-ls@claude-plugins-official": true,
         "go-ls@claude-plugins-official": true,
         "python-ls@claude-plugins-official": true,
-        "clangd-ls@claude-plugins-official": true
+        "clangd-ls@claude-plugins-official": true,
+        "claude-mem@claude-plugins-official": true
     }
 }

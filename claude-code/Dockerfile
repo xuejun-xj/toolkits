@@ -1,5 +1,5 @@
 # ---- Stage 1: Builder — install all plugins with real API tokens ----
-FROM docker.io/library/node:26-bookworm-slim AS builder
+FROM node:26-bookworm-slim AS builder
 
 # Use Aliyun mirror for apt
 RUN sed -i 's|deb.debian.org|mirrors.aliyun.com|g' /etc/apt/sources.list.d/debian.sources 2>/dev/null; \
@@ -72,6 +72,9 @@ RUN npm config set registry https://registry.npmmirror.com
 # Install claude-code
 RUN npm install -g @anthropic-ai/claude-code
 
+# Install CodeGraph CLI (code knowledge graph for AI agents)
+RUN npm install -g @colbymchenry/codegraph
+
 # Git config
 RUN git config --global --add safe.directory '*' \
     && git config --global init.defaultBranch main
@@ -83,8 +86,10 @@ COPY --from=builder /root/.claude/plugins /root/.claude/plugins
 COPY settings.json /root/.claude/settings.json
 COPY claude.json /root/.claude.json
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
+RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+COPY my-theme.json /root/.claude/themes/my-theme.json
 
 WORKDIR /workspace
 
 ENTRYPOINT ["docker-entrypoint.sh"]
-CMD ["--help"]
+CMD []
