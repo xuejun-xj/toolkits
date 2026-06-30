@@ -1,5 +1,5 @@
 {
-    "theme": "custom:my-theme",
+    "theme": "dark-ansi",
     "env": {
         "ANTHROPIC_AUTH_TOKEN": "YOUR_API_KEY",
         "ANTHROPIC_BASE_URL": "https://dashscope.aliyuncs.com/apps/anthropic",

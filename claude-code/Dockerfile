@@ -87,7 +87,6 @@ COPY settings.json /root/.claude/settings.json
 COPY claude.json /root/.claude.json
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
 RUN chmod +x /usr/local/bin/docker-entrypoint.sh
-COPY my-theme.json /root/.claude/themes/my-theme.json
 
 WORKDIR /workspace
 
