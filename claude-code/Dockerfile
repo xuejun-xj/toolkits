@@ -90,5 +90,7 @@ RUN chmod +x /usr/local/bin/docker-entrypoint.sh
 
 WORKDIR /workspace
 
+ENV TERM=xterm-256color
+
 ENTRYPOINT ["docker-entrypoint.sh"]
 CMD []
